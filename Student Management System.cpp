@@ -45,3 +45,18 @@ struct sub3 {
 };
 
 sub3 sb3[m_s];
+
+void saveData();
+void enter();
+void show();
+void search();
+void update();
+void loadData();
+void gpa_finder();
+void deleteAllRecords();
+void deleteRecord();
+
+int main(){
+
+    
+}
