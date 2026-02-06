@@ -311,3 +311,40 @@ void show(){
     	}
     }
 }
+
+void search(){
+    if(total==0){
+        cout<<"Invalid Input"<<endl;
+    }
+    else
+    {
+    string roll;
+    cout<<"Enter Roll-No Of Student: ";
+    cin>>roll;
+    cin.ignore();
+    for(int i=0;i<total;i++){
+        if(roll==sb1[i].Add1.reg){
+            cout<<"Data of student "<<i+1<<":\n";
+        cout<<"Name of the student is: "<<sb1[i].Add1.name<<endl;
+        cout<<"Roll-No is: "<<sb1[i].Add1.reg<<endl;
+        cout<<"Department is: "<<sb1[i].Add1.dept<<endl;
+        cout<<"Section is: "<<sb1[i].Add1.section<<endl;
+        cout<<"Marks Obtained in Subject "<<subject1<<" is : "<<endl<<endl;
+        cout<<"Obtained Quiz Marks: "<<sb1[i].quiz<<endl;
+        cout<<"Obtaind Assignment Marks: "<<sb1[i].assignments<<endl;
+        cout<<"Obtained Mid Terms Marks: "<<sb1[i].mids<<endl;
+        cout<<"Obtained Terminal Exam Marks: "<<sb1[i].terminal<<endl;
+        cout<<"Marks Obtained in Subject "<<subject2<<" is : "<<endl<<endl;
+        cout<<"Obtained Quiz Marks: "<<sb2[i].quiz<<endl;
+        cout<<"Obtaind Assignment Marks: "<<sb2[i].assignments<<endl;
+        cout<<"Obtained Mid Terms Marks: "<<sb2[i].mids<<endl;
+        cout<<"Obtained Terminal Exam Marks: "<<sb2[i].terminal<<endl;
+        cout<<"Marks Obtained in Subject "<<subject3<<" is : "<<endl<<endl;
+        cout<<"Obtained Quiz Marks: "<<sb3[i].quiz<<endl;
+        cout<<"Obtaind Assignment Marks: "<<sb3[i].assignments<<endl;
+        cout<<"Obtained Mid Terms Marks: "<<sb3[i].mids<<endl;
+        cout<<"Obtained Terminal Exam Marks: "<<sb3[i].terminal<<endl;
+            }
+        }
+    }
+}
