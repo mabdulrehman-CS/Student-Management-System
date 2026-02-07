@@ -458,3 +458,91 @@ void update() {
     cout << "Student with Roll-No " << roll << " not found!" << endl;
 	}
 }
+
+void loadData() {
+    ifstream inFile("data.txt");
+    if (!inFile) {
+        cout << "Unable to open file data.txt. Starting with empty data." << endl;
+        return;
+    }
+
+    // Read the subject names
+    getline(inFile, subject1);
+    getline(inFile, subject2);
+    getline(inFile, subject3);
+
+    // Read the total number of students
+    inFile >> total;
+    inFile.ignore();
+
+    // Read the student data
+    for (int i = 0; i < total; i++) {
+        getline(inFile, sb1[i].Add1.name);
+        getline(inFile, sb1[i].Add1.reg);
+        getline(inFile, sb1[i].Add1.dept);
+        getline(inFile, sb1[i].Add1.section);
+
+        inFile >> sb1[i].quiz;
+        inFile >> sb1[i].assignments;
+        inFile >> sb1[i].mids;
+        inFile >> sb1[i].terminal;
+
+        inFile >> sb2[i].quiz;
+        inFile >> sb2[i].assignments;
+        inFile >> sb2[i].mids;
+        inFile >> sb2[i].terminal;
+
+        inFile >> sb3[i].quiz;
+        inFile >> sb3[i].assignments;
+        inFile >> sb3[i].mids;
+        inFile >> sb3[i].terminal;
+
+        inFile.ignore();
+    }
+
+    inFile.close();
+}
+
+
+
+
+void saveData() {
+    ofstream outFile("data.txt");
+    if (!outFile) {
+        cout << "Unable to open file data.txt. Data cannot be saved." << endl;
+        return;
+    }
+
+    // Write the subject names
+    outFile << subject1 << endl;
+    outFile << subject2 << endl;
+    outFile <<subject3 << endl;
+
+    // Write the total number of students
+    outFile << total << endl;
+
+    // Write the student data
+    for (int i = 0; i < total; i++) {
+        outFile << sb1[i].Add1.name << endl;
+        outFile << sb1[i].Add1.reg << endl;
+        outFile << sb1[i].Add1.dept << endl;
+        outFile << sb1[i].Add1.section << endl;
+
+        outFile <<sb1[i].quiz << endl;
+        outFile << sb1[i].assignments << endl;
+        outFile << sb1[i].mids << endl;
+        outFile << sb1[i].terminal << endl;
+
+        outFile <<sb2[i].quiz << endl;
+        outFile << sb2[i].assignments << endl;
+        outFile <<sb2[i].mids << endl;
+        outFile << sb2[i].terminal << endl;
+
+        outFile << sb3[i].quiz << endl;
+        outFile << sb3[i].assignments << endl;
+        outFile << sb3[i].mids << endl;
+        outFile << sb3[i].terminal << endl;
+    }
+
+    outFile.close();
+}
