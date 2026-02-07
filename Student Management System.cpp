@@ -348,3 +348,113 @@ void search(){
         }
     }
 }
+
+void update() {
+	if(total==0){
+		cout<<"No Data Entered Yet."<<endl;
+	}
+	else{
+    string roll;
+    cout << "Enter the Roll-No Of The Student: ";
+    cin >> roll;
+    cin.ignore();
+
+    for (int i = 0; i < total; i++) {
+        if (roll == sb1[i].Add1.reg) {
+            cout << "Previous Data" << endl << endl;
+            cout << "Data of student " << i + 1 << ":" << endl;
+            cout << "Name of the student is: " << sb1[i].Add1.name << endl;
+            cout << "Roll-No is: " << sb1[i].Add1.reg << endl;
+            cout << "Department is: " << sb1[i].Add1.dept << endl;
+            cout << "Section is: " << sb1[i].Add1.section << endl;
+            cout << "Marks Obtained in Subject " << subject1 << " is: " << endl;
+            cout << "Obtained Quiz Marks: " << sb1[i].quiz << endl;
+            cout << "Obtained Assignment Marks: " << sb1[i].assignments << endl;
+            cout << "Obtained Mid Terms Marks: " << sb1[i].mids << endl;
+            cout << "Obtained Terminal Exam Marks: " << sb1[i].terminal << endl;
+            cout << "Marks Obtained in Subject " << subject2 << " is: " << endl;
+            cout << "Obtained Quiz Marks: " << sb2[i].quiz << endl;
+            cout << "Obtained Assignment Marks: " << sb2[i].assignments << endl;
+            cout << "Obtained Mid Terms Marks: " << sb2[i].mids << endl;
+            cout << "Obtained Terminal Exam Marks: " << sb2[i].terminal << endl;
+            cout << "Marks Obtained in Subject " << subject3 << " is: " << endl;
+            cout << "Obtained Quiz Marks: " << sb3[i].quiz << endl;
+            cout << "Obtained Assignment Marks: " << sb3[i].assignments << endl;
+            cout << "Obtained Mid Terms Marks: " << sb3[i].mids << endl;
+            cout << "Obtained Terminal Exam Marks: " << sb3[i].terminal << endl;
+
+            // Update the data
+            cout << "\n*Enter New Data*" << endl;
+            cout << "Enter the Name: ";
+            getline(cin, sb1[i].Add1.name);
+            cout << "Enter the Registration No: ";
+            getline(cin, sb1[i].Add1.reg);
+            cout << "Enter the Department: ";
+            getline(cin, sb1[i].Add1.dept);
+            cout << "Enter the Section: ";
+            getline(cin, sb1[i].Add1.section);
+            cout << "Enter Marks Of Subject " << subject1 << ": " << endl;
+            do {
+                cout << "Enter the Quiz marks [Between 0 to 15]: ";
+                cin >> sb1[i].quiz;
+            } while (sb1[i].quiz < 0 || sb1[i].quiz > 15);
+
+            do{
+				cout << "Enter the Assignment marks [Between 0 to 10]: ";
+            	cin >> sb1[i].assignments;}
+			while(sb1[i].assignments>15||sb1[i].assignments<0);
+            do{
+				cout << "Enter the Mid Terms marks [Between 0 to 25]: ";
+            	cin >> sb1[i].mids;
+			}
+			while(sb1[i].mids<0||sb1[i].mids>25);
+            do{
+				cout << "Enter the Terminal Exam marks [Between 0 to 50]: ";
+            	cin >> sb1[i].terminal;}
+            while(sb1[i].terminal>50||sb1[i].terminal<0);
+            cout << "Enter Marks Of Subject " << subject2 << ": " << endl;
+            do {
+                cout << "Enter the Quiz marks [Between 0 to 15]: ";
+                cin >> sb2[i].quiz;
+            } while (sb2[i].quiz < 0 || sb2[i].quiz > 15);
+
+            do{
+				cout << "Enter the Assignment marks [Between 0 to 10]: ";
+            	cin >> sb2[i].assignments;}
+            while(sb2[i].assignments>10||sb2[i].assignments<0);
+            do{
+				cout << "Enter the Mid Terms marks [Between 0 to 25]: ";
+            	cin >> sb2[i].mids;}
+            while(sb2[i].mids>25||sb2[i].mids<0);
+            do{
+            	cout << "Enter the Terminal Exam marks [Between 0 to 50]: ";
+            	cin >> sb2[i].terminal;}
+            while(sb2[i].terminal>50||sb2[i].mids<0);
+
+            cout << "Enter Marks Of Subject " << subject3 << ": " << endl;
+            do {
+                cout << "Enter the Quiz marks [Between 0 to 15]: ";
+                cin >> sb3[i].quiz;
+            } while (sb3[i].quiz < 0 || sb3[i].quiz > 15);
+
+            do{
+            	cout << "Enter the Assignment marks [Between 0 to 10]: ";
+            	cin >> sb3[i].assignments;}
+            	while (sb3[i].assignments < 0 || sb3[i].assignments > 10);
+            do{
+            	cout << "Enter the Mid Terms marks [Between 0 to 25]: ";
+            	cin >> sb3[i].mids;}
+            	while (sb3[i].mids < 0 || sb3[i].mids > 25);
+            do{
+            	cout << "Enter the Terminal Exam marks [Between 0 to 50]: ";
+            	cin >> sb3[i].terminal;}
+            	while (sb3[i].terminal < 0 || sb3[i].terminal > 50);
+            
+
+            cout << "\nData of Student " << i + 1 << " has been updated successfully!" << endl;
+            return;
+        }
+    }
+    cout << "Student with Roll-No " << roll << " not found!" << endl;
+	}
+}
