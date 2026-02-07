@@ -546,3 +546,32 @@ void saveData() {
 
     outFile.close();
 }
+
+void gpa_finder() {
+    cout << "----------------------------------------------------------------------------------------" << endl;
+    cout << "\t\tGPA CALCULATION\t\t" << endl;
+    cout << "----------------------------------------------------------------------------------------" << endl;
+    
+    for (int i = 0; i < total; i++) {
+        cout << "Data of student " << i + 1 << ":" << endl;
+        cout << "Name of the student is: " << sb1[i].Add1.name << endl;
+        cout << "Roll-No is: " << sb1[i].Add1.reg << endl;
+        cout << "Department is: " << sb1[i].Add1.dept << endl;
+        cout << "Section is: " << sb1[i].Add1.section << endl;
+        
+        // Calculate subject-wise GPA
+        float gpa_subject1 = (sb1[i].quiz + sb1[i].assignments + sb1[i].mids + sb1[i].terminal) / 25;
+        float gpa_subject2 = (sb2[i].quiz + sb2[i].assignments + sb2[i].mids + sb2[i].terminal) / 25;
+        float gpa_subject3 = (sb3[i].quiz + sb3[i].assignments + sb3[i].mids + sb3[i].terminal) / 25;
+        
+        // Calculate overall GPA
+        float gpa = (gpa_subject1 + gpa_subject2 + gpa_subject3) / 3.0;
+        
+        cout << "GPA of Subject " << subject1 << ": " << gpa_subject1 << endl;
+        cout << "GPA of Subject " << subject2 << ": " << gpa_subject2 << endl;
+        cout << "GPA of Subject " << subject3 << ": " << gpa_subject3 << endl;
+        cout << "Overall GPA: " << gpa << endl;
+        
+        cout << "----------------------------------------------------------------------------------------" << endl;
+    }
+}
