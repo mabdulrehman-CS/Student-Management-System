@@ -575,3 +575,39 @@ void gpa_finder() {
         cout << "----------------------------------------------------------------------------------------" << endl;
     }
 }
+
+void deleteAllRecords(){
+    total = 0; // Reset the total count of records to 0
+}
+void deleteRecord() {
+    string roll;
+    cout << "Enter the Roll-No Of The Student to delete: ";
+    cin >> roll;
+    cin.ignore();
+    
+    int recordDeleted = 0;
+    for (int i = 0; i < total; i++) {
+        if (roll == sb1[i].Add1.reg) {
+            // Shift all records after the deleted record to the left
+            for (int j = i; j < total - 1; j++) {
+            	sb1[j].Add1.name=sb1[j+1].Add1.name;
+            	sb1[j].Add1.reg=sb1[j+1].Add1.reg;
+            	sb1[j].Add1.dept=sb1[j+1].Add1.dept;
+            	sb1[j].Add1.section=sb1[j+1].Add1.section;
+                sb1[j] = sb1[j + 1];
+                sb2[j] = sb2[j + 1];
+                sb3[j] = sb3[j + 1];
+            }
+            
+            total--; // Reduce the total count of records by 1
+            recordDeleted = 1;
+            break;
+        }
+    }
+    
+    if (recordDeleted==1) {
+        cout << "Record with Roll-No " << roll << " has been deleted.\n";
+    } else {
+        cout << "Record with Roll-No " << roll << " not found.\n";
+    }
+}
